@@ -134,14 +134,14 @@
 
 Для выполнения работы, я буду использовать уже настроенную рабочую машину, со следующими компонентами:
 
- Terraform v1.5.7
- Ansible 2.16.2
- Python 3.10.12
- Docker 26.1.3
- Git 2.34.1
- Kubectl v1.30.2
- Helm v3.16.1
- Yandex Cloud CLI 0.130.0
+     Terraform v1.5.7
+     Ansible 2.16.2
+     Python 3.10.12
+     Docker 26.1.3
+     Git 2.34.1
+     Kubectl v1.30.2
+     Helm v3.16.1
+     Yandex Cloud CLI 0.130.0
 
 ![изображение](https://github.com/user-attachments/assets/16207aec-ffba-416e-8af2-b27bf9c9a39b)
 
