@@ -147,22 +147,22 @@
 
 ## Создание облачной инфраструктуры
 
-    Создам сервисный аккаунт с необходимыми правами для работы с облачной инфраструктурой:
+1. Создам сервисный аккаунт с необходимыми правами для работы с облачной инфраструктурой:
 
-# Создаем сервисный аккаунт для Terraform
-resource "yandex_iam_service_account" "service" {
-  folder_id = var.folder_id
-  name      = var.account_name
-}
+    # Создаем сервисный аккаунт для Terraform
+    resource "yandex_iam_service_account" "service" {
+      folder_id = var.folder_id
+      name      = var.account_name
+    }
 
-# Выдаем роль editor сервисному аккаунту Terraform
-resource "yandex_resourcemanager_folder_iam_member" "service_editor" {
-  folder_id = var.folder_id
-  role      = "editor"
-  member    = "serviceAccount:${yandex_iam_service_account.service.id}"
-}
+    # Выдаем роль editor сервисному аккаунту Terraform
+    resource "yandex_resourcemanager_folder_iam_member" "service_editor" {
+      folder_id = var.folder_id
+      role      = "editor"
+      member    = "serviceAccount:${yandex_iam_service_account.service.id}"
+    }
 
-    Подготавливаю backend для Terraform. Использовать буду S3-bucket:
+2. Подготавливаю backend для Terraform. Использовать буду S3-bucket:
 
 # Создаем статический ключ доступа для сервисного аккаунта
 resource "yandex_iam_service_account_static_access_key" "terraform_service_account_key" {
