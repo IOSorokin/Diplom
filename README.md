@@ -207,16 +207,16 @@ provisioner "local-exec" {
 
 После создания S3-bucket, выполню настройку для его использования в качестве backend для Terraform. Для этого пишу следующий код:
 
-terraform {
-  backend "s3" {
-    endpoint = "storage.yandexcloud.net"
-    bucket = "for-state"
-    region = "ru-central1"
-    key = "for-state/terraform.tfstate"
-    skip_region_validation = true
-    skip_credentials_validation = true
-  }
-}
+        terraform {
+          backend "s3" {
+            endpoint = "storage.yandexcloud.net"
+            bucket = "for-state"
+            region = "ru-central1"
+            key = "for-state/terraform.tfstate"
+            skip_region_validation = true
+            skip_credentials_validation = true
+          }
+        }
 
 Этот код настраивает Terraform на использование Yandex Cloud Storage в качестве места для хранения файла состояния terraform.tfstate, который содержит информацию о конфигурации и состоянии управляемых Terraform ресурсов. Чтобы код был корректно применен и Terraform успешно инициализировался, задам параметры для доступа к S3 хранилищу. Как писал выше, делать это я буду с помощью переменных окружения:
 
