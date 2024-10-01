@@ -171,7 +171,7 @@ resource "yandex_iam_service_account_static_access_key" "terraform_service_accou
 
 # Используем ключ доступа для создания бакета
 resource "yandex_storage_bucket" "tf-bucket" {
-  bucket     = "for-state"
+  bucket     = "forstate2024"
   access_key = yandex_iam_service_account_static_access_key.terraform_service_account_key.access_key
   secret_key = yandex_iam_service_account_static_access_key.terraform_service_account_key.secret_key
 
@@ -193,15 +193,17 @@ provisioner "local-exec" {
 
 Применю код:
 
-img_2
+![изображение](https://github.com/user-attachments/assets/46967c21-a282-4a80-a78f-d2b1698fd7f2)
+
 
 В результате применения этого кода Terraform был создан сервисный аккаунт с правами для редактирования, статический ключ доступа и S3-bucket. Переменные AWS_ACCESS_KEY и AWS_SECRET_KEY будут записаны в файл backend.tfvars. Сделано так потому, что эти данные являются очень чувствительными и не рекомендуется их хранить в облаке. Эти переменные будут в экспортированы в оболочку рабочего окружения.
 
 Проверю, создался ли S3-bucket и сервисный аккаунт:
 
-img_3
+![изображение](https://github.com/user-attachments/assets/e6e8e80b-8b91-48bb-a65e-b5ea7712c5a9)
 
 Сервисный аккаунт и S3-bucket созданы.
+
 
 После создания S3-bucket, выполню настройку для его использования в качестве backend для Terraform. Для этого пишу следующий код:
 
