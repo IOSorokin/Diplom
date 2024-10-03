@@ -1,0 +1,2 @@
+export ACCESS_KEY=YCAJEk0WEkgcqfnS9NbLx7QZI
+export SECRET_KEY=YCNY1ziiTS0WAkovEfvpNWH5-iohxe5jIz4_sVp9
