@@ -307,7 +307,7 @@ provisioner "local-exec" {
 
 Применю код для создания облачной инфраструктуры, состоящей из одной Master ноды, двух Worker нод, сети и подсети:
 
-img_7
+![image](https://github.com/user-attachments/assets/4301d16b-3658-45cf-a070-261709d04acd)
 
 Кроме создания сети, подсетей и виртуальных машин, создается ресурс из файла ansible.tf, который по шаблону hosts.tftpl создает inventory файл. Этот inventory файл в дальнейшем будет использоваться для развёртывания Kubernetes кластера из репозитория Kubespray.
 
@@ -321,7 +321,7 @@ img_7
 
 Проверю, создались ли виртуальные машины:
 
-img_8
+![image](https://github.com/user-attachments/assets/bf6e7419-cd9b-438e-b9a9-77904d45d050)
 
 Виртуальные машины созданы в разных подсетях и разных зонах доступности.
 
@@ -329,25 +329,29 @@ img_8
 
     Сервисный аккаунт:
 
-img_9
+![image](https://github.com/user-attachments/assets/854ec5d1-ef28-4f87-a7fa-a2f820a278ce)
 
     S3-bucket:
 
-img_10
+![image](https://github.com/user-attachments/assets/9690ff62-02bb-48eb-98fd-dc978ab62242)
+
 
     Сеть и подсети:
 
-img_11
+![image](https://github.com/user-attachments/assets/e4e481d6-e691-4142-baf6-fd9e1db94cdc)
 
     Виртуальные машины:
 
-img_12
+![image](https://github.com/user-attachments/assets/e444b912-3eb4-4c19-a0f8-febdacd67905)
+
 
 Проверю удаление созданных ресурсов:
 
-img_13
+![image](https://github.com/user-attachments/assets/68d239f1-c470-4451-8243-87e0876e223a)
 
-img_14
+![image](https://github.com/user-attachments/assets/983abd6a-0645-4f63-bc21-d6b9b037727a)
+
+
 
 Созданные виртуальные машины, сеть, подсети, сервисный аккаунт, статический ключ и S3-bucket удаляются успешно.
 
