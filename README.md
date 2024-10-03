@@ -256,13 +256,13 @@ provisioner "local-exec" {
         
         variable "cidr1" {
           type        = list(string)
-          default     = ["10.0.1.0/24"]
+          default     = ["10.0.10.0/24"]
           description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
         }
         
         variable "cidr2" {
           type        = list(string)
-          default     = ["10.0.2.0/24"]
+          default     = ["10.0.20.0/24"]
           description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
         }
         
@@ -294,13 +294,16 @@ provisioner "local-exec" {
 
 Инициализирую Terraform:
 
-img_5
+![image](https://github.com/user-attachments/assets/577a0aa1-b5d1-4fab-987a-5adf6f677696)
+
+![image](https://github.com/user-attachments/assets/8b0cde22-337e-4624-9218-1fabeba22435)
+
 
 Видно, что Terraform успешно инициализирован, backend с типом s3 успешно настроен. Terraform будет использовать этот backend для хранения файла состояния terraform.tfstate.
 
 Для проверки правильности кода, можно использовать команды terraform validate и terraform plan. В моём коде ошибок не обнаружено:
 
-img_6
+![image](https://github.com/user-attachments/assets/e79c3de3-4b81-41fc-9ae0-1775a7ed12c9)
 
 Применю код для создания облачной инфраструктуры, состоящей из одной Master ноды, двух Worker нод, сети и подсети:
 
