@@ -46,6 +46,9 @@ jobs:
       with:
         terraform_version: "1.5.7"
 
+    - name: Terraform-s3
+      run: terraform -chdir=./terraform-s3 init
+
     - name: Terraform Init
       run: terraform -chdir=./terraform init -backend-config="backend.tfvars"
 
