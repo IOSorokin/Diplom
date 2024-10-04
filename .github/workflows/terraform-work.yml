@@ -50,6 +50,12 @@ jobs:
       run: terraform -chdir=./terraform-s3 init
 
     - name: Terraform-s3 Plan
+      run: |
+        terraform -chdir=./terraform plan -input=false -out=tfplan \
+        -var="token=${{ secrets.YC_TOKEN }}" \
+        -var="cloud_id=${{ secrets.YC_CLOUD_ID }}" \
+        -var="folder_id=${{ secrets.YC_FOLDER_ID }}" \
+        -var="exclude_ansible=${{ env.TF_VAR_exclude_ansible }}"
 
     - name: Terraform Init
       run: terraform -chdir=./terraform init -backend-config="backend.tfvars"
