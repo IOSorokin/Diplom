@@ -46,7 +46,7 @@ jobs:
       with:
         terraform_version: "1.5.7"
 
-    - name: Terraform-s3
+    - name: Terraform-s3 Init
       run: terraform -chdir=./terraform-s3 init
 
     - name: Terraform-s3 Plan
