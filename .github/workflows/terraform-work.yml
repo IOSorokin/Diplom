@@ -44,15 +44,10 @@ jobs:
     - name: Set up Terraform
       uses: hashicorp/setup-terraform@v1
       with:
-        terraform_version: "1.5.7"
+        terraform_version: "1.5.5"
 
-#    - name: Terraform-s3 Init
-#      run: terraform -chdir=./terraform-s3 init
-#    - name: Terraform-s3 Plan
-#      run: terraform -chdir=./terraform-s3 plan
-   
     - name: Terraform Init
-      run: terraform -chdir=./terraform init -backend-config="backend.tfvars"
+      run: terraform -chdir=./terraform init
 
     - name: Terraform Format and Validate
       run: terraform -chdir=./terraform validate
