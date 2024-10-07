@@ -52,8 +52,11 @@ jobs:
     - name: Terraform-s3 Plan
       run: terraform -chdir=./terraform-s3 plan
 
-    - name: Terraform Init
-      run: terraform -chdir=./terraform init -backend-config="backend.tfvars"
+    - name: Terraform init backend
+      run: terraform init -chdir=./terraform -backend-config="access_key=YCAJEk0WEkgcqfnS9NbLx7QZI" -backend-config="secret_key=YCNY1ziiTS0WAkovEfvpNWH5-iohxe5jIz4_sVp9"
+
+#    - name: Terraform Init
+ #     run: terraform -chdir=./terraform init -backend-config="backend.tfvars"
 
     - name: Terraform Format and Validate
       run: terraform -chdir=./terraform validate
