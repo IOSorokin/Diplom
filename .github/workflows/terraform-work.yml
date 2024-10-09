@@ -54,7 +54,7 @@ jobs:
 
     - name: Terraform Plan
       run: |
-#        terraform -chdir=./terraform plan -input=false -out=tfplan \
+        terraform -chdir=./terraform plan -input=false -out=tfplan \
         -var="token=${{ secrets.YC_TOKEN }}" \
         -var="cloud_id=${{ secrets.YC_CLOUD_ID }}" \
         -var="folder_id=${{ secrets.YC_FOLDER_ID }}" \
