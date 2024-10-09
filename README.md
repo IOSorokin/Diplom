@@ -363,11 +363,7 @@ provisioner "local-exec" {
 
 Скриншот работы Workflow при обновлении конфигурации облачной инфраструктуры:
 
-img_16
-
-Также с помощью GitHub Actions можно удобно следить за изменением облачной инфраструктуры:
-
-img_17
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img008.png)
 
 Код Workflow доступен по ссылке: https://github.com/DemoniumBlack/fedorchukds-devops-33-56/blob/main/.github/workflows/terraform-cloud.yml
 
