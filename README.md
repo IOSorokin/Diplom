@@ -387,7 +387,7 @@ https://github.com/IOSorokin/Diplom/tree/main/terraform
 
 Клонирую репозиторий на свою рабочую машину:
 
-img_18
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img009.png)
 
 При разворачивании облачной инфраструктуры с помощью Terraform применяется следующий код:
 
