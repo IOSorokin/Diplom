@@ -164,32 +164,32 @@
 
 2. Подготавливаю backend для Terraform. Использовать буду S3-bucket:
 
-# Создаем статический ключ доступа для сервисного аккаунта
-resource "yandex_iam_service_account_static_access_key" "terraform_service_account_key" {
-  service_account_id = yandex_iam_service_account.service.id
-}
+    # Создаем статический ключ доступа для сервисного аккаунта
+    resource "yandex_iam_service_account_static_access_key" "terraform_service_account_key" {
+      service_account_id = yandex_iam_service_account.service.id
+    }
 
-# Используем ключ доступа для создания бакета
-resource "yandex_storage_bucket" "tf-bucket" {
-  bucket     = "forstate2024"
-  access_key = yandex_iam_service_account_static_access_key.terraform_service_account_key.access_key
-  secret_key = yandex_iam_service_account_static_access_key.terraform_service_account_key.secret_key
+    # Используем ключ доступа для создания бакета
+    resource "yandex_storage_bucket" "tf-bucket" {
+      bucket     = "forstate2024"
+      access_key = yandex_iam_service_account_static_access_key.terraform_service_account_key.access_key
+      secret_key = yandex_iam_service_account_static_access_key.terraform_service_account_key.secret_key
 
-  anonymous_access_flags {
-    read = false
-    list = false
-  }
+      anonymous_access_flags {
+        read = false
+        list = false
+     }
 
-  force_destroy = true
+     force_destroy = true
 
-provisioner "local-exec" {
-  command = "echo export AWS_ACCESS_KEY=${yandex_iam_service_account_static_access_key.terraform_service_account_key.access_key} > ../terraform/backend.tfvars"
-}
+    provisioner "local-exec" {
+     command = "echo export AWS_ACCESS_KEY=${yandex_iam_service_account_static_access_key.terraform_service_account_key.access_key} > ../terraform/backend.tfvars"
+    }
 
-provisioner "local-exec" {
-  command = "echo export AWS_SECRET_KEY=${yandex_iam_service_account_static_access_key.terraform_service_account_key.secret_key} >> ../terraform/backend.tfvars"
-}
-}
+    provisioner "local-exec" {
+      command = "echo export AWS_SECRET_KEY=${yandex_iam_service_account_static_access_key.terraform_service_account_key.secret_key} >> ../terraform/backend.tfvars"
+    }
+    }
 
 Применю код:
 
@@ -365,20 +365,21 @@ provisioner "local-exec" {
 
 ![image](https://github.com/IOSorokin/Diplom/blob/main/images/img008.png)
 
-Код Workflow доступен по ссылке: https://github.com/DemoniumBlack/fedorchukds-devops-33-56/blob/main/.github/workflows/terraform-cloud.yml
+Код Workflow доступен по ссылке: https://github.com/IOSorokin/Diplom/blob/main/.github/workflows/terraform-work.yml
 
-Выполненные GitHub Actions доступны по ссылке: https://github.com/DemoniumBlack/fedorchukds-devops-33-56/actions
+Выполненные GitHub Actions доступны по ссылке: hhttps://github.com/IOSorokin/Diplom/actions
 
 Полный код Terraform для создания сервисного аккаунта, статического ключа и S3-bucket доступен по ссылке:
 
-https://github.com/DemoniumBlack/fedorchukds-devops-33-56/blob/main/terraform-s3/
+https://github.com/IOSorokin/Diplom/tree/main/terraform-s3
 
 Полный код Terraform для создания сети, подсетей, виртуальных машин доступен по ссылке:
 
-https://github.com/DemoniumBlack/fedorchukds-devops-33-56/blob/main/terraform/
+https://github.com/IOSorokin/Diplom/tree/main/terraform
 
 В ходе выполнения работы код может быть изменен и дополнен.
-Создание Kubernetes кластера
+
+# Создание Kubernetes кластера
 
 После развёртывания облачной инфраструктуры, приступаю к развёртыванию Kubernetes кластера.
 
