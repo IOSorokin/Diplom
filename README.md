@@ -391,13 +391,13 @@ https://github.com/IOSorokin/Diplom/tree/main/terraform
 
 При разворачивании облачной инфраструктуры с помощью Terraform применяется следующий код:
 
-resource "local_file" "hosts_cfg_kubespray" {
-  content  = templatefile("${path.module}/hosts.tftpl", {
-    workers = yandex_compute_instance.worker
-    masters = yandex_compute_instance.master
-  })
-  filename = "../../kubespray/inventory/mycluster/hosts.yaml"
-}
+    resource "local_file" "hosts_cfg_kubespray" {
+      content  = templatefile("${path.module}/hosts.tftpl", {
+        workers = yandex_compute_instance.worker
+        masters = yandex_compute_instance.master
+      })
+      filename = "../../kubespray/inventory/mycluster/hosts.yaml"
+    }
 
 Этот код по пути /data/kubespray/inventory/mycluster/ создаст файл hosts.yaml и по шаблону автоматически заполнит его ip адресами нод.
 
