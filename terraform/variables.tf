@@ -68,13 +68,13 @@ variable "subnet2" {
 variable "ssh_public_key" {
   description = "SSH public key"
   type        = string
-  default     = ""
+  default     = "~/.ssh/id_ed25519.pub"
 }
 
 variable "ssh_private_key" {
   description = "SSH private key"
   type        = string
-  default     = ""
+  default     = "~/.ssh/id_ed25519"
 }
 
 variable "exclude_ansible" {

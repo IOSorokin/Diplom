@@ -1,6 +1,6 @@
 variable "os_image_master" {
   type    = string
-  default = "ubuntu-2204-lts"
+  default = "ubuntu-2004-lts"
 }
 
 data "yandex_compute_image" "ubuntu-master" {
@@ -19,7 +19,7 @@ variable "yandex_compute_instance_master" {
 
   default = [{
       vm_name = "master"
-      cores         = 2
+      cores         = 4
       memory        = 4
       core_fraction = 5
       count_vms = 1
