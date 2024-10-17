@@ -436,7 +436,7 @@ ansible-playbook -i inventory/mycluster/hosts.yaml -u ubuntu --become --become-u
 
 Спустя некоторое время установка Kubernetes кластера методом Kubespray завершена:
 
-img_19
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img010.png)
 
 Далее нужно создать конфигурационный файл кластера Kubernetes.
 
