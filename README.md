@@ -448,7 +448,7 @@ ansible-playbook -i inventory/mycluster/hosts.yaml -u ubuntu --become --become-u
 
 Конфигурационный файл создан. Теперь можно проверить доступность подов и нод кластера:
 
-img_21
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img011.png)
 
 Поды и ноды кластера доступны и находятся в состоянии готовности, следовательно развёртывание Kubernetes кластера успешно завершено.
 Создание тестового приложения
