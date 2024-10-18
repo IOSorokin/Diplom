@@ -1,6 +1,7 @@
 # Local .terraform directories
 **/.terraform/*
 **/.terraform-s3/*
+**/kubespray
 
 # .tfstate files
 *.tfstate
