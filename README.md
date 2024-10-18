@@ -455,21 +455,21 @@ ansible-playbook -i inventory/mycluster/hosts.yaml -u ubuntu --become --become-u
 
     Создаю отдельный репозиторий для тестового приложения:
 
-img_22
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img013.png)
 
 Клонирую репозиторий на свою рабочую машину:
 
-img_23
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img014.png)
 
 Создаю статичную страничку, которая будет показывать картинку и текст:
 
-img_24
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img016.png)
 
-img_25
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img015.png)
 
 Сделаю коммит и отправлю созданную страницу в репозиторий:
 
-img_26
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img017.png)
 
 Ссылка на репозиторий: https://github.com/DemoniumBlack/diplom-test-site
 
