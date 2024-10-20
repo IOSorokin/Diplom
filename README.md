@@ -475,12 +475,12 @@ ansible-playbook -i inventory/mycluster/hosts.yaml -u ubuntu --become --become-u
 
     Пишу Dockerfile, который создаст контейнер с nginx и отобразит созданную страницу:
 
-img_27
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img018.png)
 
-FROM nginx:1.27.0
-RUN rm -rf /usr/share/nginx/html/*
-COPY content/ /usr/share/nginx/html/
-EXPOSE 80
+    FROM nginx:1.27.0
+    RUN rm -rf /usr/share/nginx/html/*
+    COPY content/ /usr/share/nginx/html/
+    EXPOSE 80
 
 Авторизуюсь в Docker Hub:
 
