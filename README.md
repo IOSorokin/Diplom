@@ -585,11 +585,11 @@ Deployment создан и запущен.
 
 Применю манифест сервиса и проверю результат:
 
-img_49
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img039.png)
 
 Сервис создан. Теперь проверю доступ к приложению извне:
 
-img_50
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img040.png)
 
 Сайт открывается, приложение доступно.
 
