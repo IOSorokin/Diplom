@@ -541,12 +541,11 @@ helm show values prometheus-community/kube-prometheus-stack > helm-prometheus/va
 
 ![image](https://github.com/IOSorokin/Diplom/blob/main/images/img029.png)
 
-
 Используя Helm и подготовленный файл значений values.yaml выполню установку prometheus-community:
 
 helm upgrade --install monitoring prometheus-community/kube-prometheus-stack --create-namespace -n monitoring -f helm-prometheus/values.yaml
 
-img_39
+img_3
 
 При установке был создан отдельный Namespace с названием monitoring.
 
