@@ -523,7 +523,7 @@ Kubernetes кластер доступен с рабочей машины.
 
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 
-img_35
+img_3
 
 Для доступа к Grafana снаружи кластера Kubernetes буду использовать тип сервиса NodePort.
 
