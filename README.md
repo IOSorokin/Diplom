@@ -523,7 +523,7 @@ Kubernetes кластер доступен с рабочей машины.
 
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 
-img_3
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img026.png)
 
 Для доступа к Grafana снаружи кластера Kubernetes буду использовать тип сервиса NodePort.
 
@@ -531,21 +531,16 @@ img_3
 
 helm show values prometheus-community/kube-prometheus-stack > helm-prometheus/values.yaml
 
-img_36
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img027.png)
 
 Изменю пароль по умолчанию для входа в Grafana:
 
-img_37
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img028.png)
 
 Изменю сервис и присвою ему порт 30050:
 
-img_38
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img029.png)
 
-grafana:
-  service:
-    portName: http-web
-    type: NodePort
-    nodePort: 30050
 
 Используя Helm и подготовленный файл значений values.yaml выполню установку prometheus-community:
 
