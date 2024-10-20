@@ -601,21 +601,19 @@ Deployment создан и запущен.
 
 Для организации процессов CI/CD буду использовать GitLab.
 
-Создаю в GitLab новый пустой проект с именем diplom-site.
+Создаю в GitLab новый пустой проект с именем diplom-cicd.
 
-img_54
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img041.png)
 
 Отправлю созданную ранее статичную страницу и Dockerfile из старого репозитория GitHub в новый проект на GitLab:
 
-img_55
-
-img_56
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img042.png)
 
 Для автоматизации процесса CI/CD мне нужен GitLab Runner, который будет выполнять задачи, указанные в файле .gitlab-ci.yml.
 
 На странице настроек проекта в разделе подключения GitLab Runner создаю Runner. Указанные на странице данные понадобятся для регистрации и аутентификации Runner'а в проекте.
 
-img_57
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img043.png)
 
 Выполню подготовку Kubernetes кластера к установке GitLab Runner'а. Создам отдельный Namespace, в котором будет располагаться GitLab Runner и создам Kubernetes secret, который будет использоваться для регистрации установленного в дальнейшем GitLab Runner:
 
@@ -623,7 +621,7 @@ kubectl create ns gitlab-runner
 
 kubectl --namespace=gitlab-runner create secret generic runner-secret --from-literal=runner-registration-token="<token>" --from-literal=runner-token=""
 
-img_58
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img044.png)
 
 Также понадобится подготовить файл значений values.yaml, для того, чтобы указать в нем количество Runners, время проверки наличия новых задач, настройка логирования, набор правил для доступа к ресурсам Kubernetes, ограничения на ресурсы процессора и памяти.
 
@@ -635,15 +633,15 @@ helm repo add gitlab https://charts.gitlab.io
 
 helm install gitlab-runner gitlab/gitlab-runner -n gitlab-runner -f helm-runner/values.yaml
 
-img_59
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img045.png)
 
 Проверю результат установки:
 
-img_60
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img046.png)
 
 GitLab Runner установлен и запущен. Также можно через web-интерфейс проверить, подключился ли GitLab Runner к GitLab репозиторию:
 
-img_61
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img047.png)
 
 Подключение GitLab Runner к репозиторию GitLab завершено.
 
