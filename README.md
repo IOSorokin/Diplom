@@ -451,9 +451,10 @@ ansible-playbook -i inventory/mycluster/hosts.yaml -u ubuntu --become --become-u
 ![image](https://github.com/IOSorokin/Diplom/blob/main/images/img012.png)
 
 Поды и ноды кластера доступны и находятся в состоянии готовности, следовательно развёртывание Kubernetes кластера успешно завершено.
-Создание тестового приложения
 
-    Создаю отдельный репозиторий для тестового приложения:
+# Создание тестового приложения
+
+  Создаю отдельный репозиторий для тестового приложения:
 
 ![image](https://github.com/IOSorokin/Diplom/blob/main/images/img013.png)
 
@@ -595,7 +596,7 @@ Deployment создан и запущен.
 
 Ссылка на манифест сервиса: https://github.com/DemoniumBlack/fedorchukds-devops-33-56/blob/main/k8s-app/service.yaml
 
-Развёртывание системы мониторинга и тестового приложения завершено.
+# Развёртывание системы мониторинга и тестового приложения завершено.
 Установка и настройка CI/CD
 
 Для организации процессов CI/CD буду использовать GitLab.
