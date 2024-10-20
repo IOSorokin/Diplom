@@ -509,16 +509,6 @@ ansible-playbook -i inventory/mycluster/hosts.yaml -u ubuntu --become --become-u
 Образ опубликован, подготовка тестового приложения закончена.
 Подготовка системы мониторинга и деплой приложения
 
-Для удобства управления созданным Kubernetes кластером, скопирую конфиг на свою рабочую машину и заменю IP адрес сервера:
-
-![image](https://github.com/IOSorokin/Diplom/blob/main/images/img024.png)
-
-Проверю результат:
-
-![image](https://github.com/IOSorokin/Diplom/blob/main/images/img025.png)
-
-Kubernetes кластер доступен с рабочей машины.
-
 Добавлю репозиторий prometheus-community для его установки с помощью helm:
 
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
@@ -545,13 +535,13 @@ helm show values prometheus-community/kube-prometheus-stack > helm-prometheus/va
 
 helm upgrade --install monitoring prometheus-community/kube-prometheus-stack --create-namespace -n monitoring -f helm-prometheus/values.yaml
 
-img_3
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img030.png)
 
 При установке был создан отдельный Namespace с названием monitoring.
 
-Проверю результат установки:
+Проверю вывод установки:
 
-img_40
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img031.png)
 
 Установка была выполнена с заданными в values.yaml значениями.
 
@@ -559,43 +549,39 @@ img_40
 
 Открою web-интерфейс Grafana:
 
-img_41
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img032.png)
 
 Авторизуюсь в Grafana с заранее заданным в values.yaml паролем:
 
-img_42
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img033.png)
 
 Авторизация проходит успешно, данные о состоянии кластера отображаются на дашбордах:
 
-img_43
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img034.png)
 
 Развёртывание системы мониторинга успешно завершено.
 
 Приступаю к развёртыванию тестового приложения на Kubernetes кластере.
 
-Создаю отдельный Namespace, в котором буду развёртывать тестовое приложение:
+Создаю отдельный Namespace, в котором разверну мое тестовое приложение:
 
-img_44
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img035.png)
 
 Пишу манифест Deployment с тестовым приложением:
 
-img_45
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img036.png)
 
 Применю манифест Deployment и проверю результат:
 
-img_46
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img037.png)
 
-Deployment создан и запущен. Проверю его работу:
-
-img_47
-
-Приложение работает.
+Deployment создан и запущен. 
 
 Ссылка на манифест Deployment: https://github.com/DemoniumBlack/fedorchukds-devops-33-56/blob/main/k8s-app/deployment.yaml
 
 Пишу манифест сервиса с типом NodePort для доступа к web-интерфейсу тестового приложения:
 
-img_48
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img038.png)
 
 Применю манифест сервиса и проверю результат:
 
