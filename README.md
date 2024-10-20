@@ -484,27 +484,27 @@ ansible-playbook -i inventory/mycluster/hosts.yaml -u ubuntu --become --become-u
 
 Авторизуюсь в Docker Hub:
 
-img_28
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img019.png)
 
 Создаю Docker образ:
 
-img_29
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img020.png)
 
-Проверю, создался ли образ:
+Образ создался:
 
-img_30
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img021.png)
 
 Образ создан.
 
 Опубликую созданный образ реестре Docker Hub:
 
-img_31
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img022.png)
 
 Проверю наличие образа в реестре Docker Hub:
 
-img_32
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img022.png)
 
-Ссылка на реестр Docker Hub: https://hub.docker.com/repository/docker/demonium1988/diplom-test-site/general
+Ссылка на реестр Docker Hub: https://hub.docker.com/repository/docker/iosorokin/diplom/general
 
 Образ опубликован, подготовка тестового приложения закончена.
 Подготовка системы мониторинга и деплой приложения
