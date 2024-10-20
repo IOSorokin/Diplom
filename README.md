@@ -515,7 +515,7 @@ ansible-playbook -i inventory/mycluster/hosts.yaml -u ubuntu --become --become-u
 
 Проверю результат:
 
-img_34
+img_3
 
 Kubernetes кластер доступен с рабочей машины.
 
