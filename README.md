@@ -502,7 +502,7 @@ ansible-playbook -i inventory/mycluster/hosts.yaml -u ubuntu --become --become-u
 
 Проверю наличие образа в реестре Docker Hub:
 
-![image](https://github.com/IOSorokin/Diplom/blob/main/images/img022.png)
+![image](https://github.com/IOSorokin/Diplom/blob/main/images/img023.png)
 
 Ссылка на реестр Docker Hub: https://hub.docker.com/repository/docker/iosorokin/diplom/general
 
